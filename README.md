@@ -20,7 +20,7 @@ This is kind of an unprofessional README, but I don't really know how to write a
 1. Clone the source code by typing this in your git terminal:
    `git clone https://github.com/RockoIsStinky/RockoIsStinky.github.io.git`
 2. Go to your project's directory:
-   `cd RockoIsStinky.github.io` <- Just an example; it will change based on your cloning path
+   `cd SCRMBL` <- Just an example; it will change based on your cloning path
 3. Install npm: `npm install`
 4. Run it: `npm run dev` or `npx vite`; both work!
 
