@@ -1,6 +1,8 @@
 # SCRMBL 
-An RNG and skill-based game website, made by a cuber for cubers & gamblers!! You get one seed-based scramble each day, and share it with your cubing/gambling friends :D
-![supercoolgif](assets/SCRMBL.gif)
+An RNG and skill-based game website, made by a cuber for cubers & gamblers!! You get one seed-based scramble each day, and share it with your cubing/gambling friends
+<p align="center">
+  <img src="./assets/SCRMBL.gif" alt="supercoolgif" width="300">
+</p>
 
 ## HOW IT WAS MADE
 ### Phase 1
