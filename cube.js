@@ -155,10 +155,10 @@ export function cubeHelp({
           // because blender's bevel sucks but i ended up doing some wierd displace modifier magic
           const modelPath =
             count === 3
-              ? "models/Corner.obj"
+              ? `${import.meta.env.BASE_URL}models/Corner.obj`
               : count === 2
-                ? "models/Edge.obj"
-                : "models/CenterPiece.obj";
+                ? `${import.meta.env.BASE_URL}models/Edge.obj`
+                : `${import.meta.env.BASE_URL}models/CenterPiece.obj`;
           loader.load(modelPath, (object) => {
             // set the transforms of hte pieces
             object.scale.setScalar(pieceScale);
