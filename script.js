@@ -747,13 +747,13 @@ document.addEventListener("click", async (event) => {
     const topThree = totalCards
       .slice(-3)
       .reverse()
-      .map((card) => card.name);
+      .map((card) => card.name)
+      .join(", ");
     const remaining = totalCards.length - 3;
     const cardsText =
       remaining > 0 ? `${topThree} and ${remaining} more` : topThree;
-    cardsText.join("\n");
 
-    const shareText = `${title}\n\n${scrambleLable}\n${expText}\n${seedText}\n${scramble}\n\n${cardText}\n${cardsText}`;
+    const shareText = `${title}\n\n${scrambleLable}\n${expText}\n${seedText}\n${scramble}\n${cardText}\n${cardsText}`;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(shareText);

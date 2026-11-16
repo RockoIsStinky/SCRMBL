@@ -38,8 +38,6 @@ export function titleRepel() {
   });
   // resizing the window has some wierd effects on how much the text will translate, so this fixes it
   window.addEventListener("resize", () => {
-    resizeCanvas();
-
     titles.forEach((title) => {
       const rect = title.getBoundingClientRect();
 
