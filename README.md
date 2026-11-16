@@ -33,8 +33,8 @@ This is kind of an unprofessional README, but I don't really know how to write a
      Local:   http://localhost:1234/
      Network: use --host to expose
      press h + enter to show help 
-## PHANTOM
-Hi phantom reviewers! A little background on this project: I originally made this for Citadel on September 10. Just wanna note that!
+## FOR REVIEWERS
+Hi reviewers! A little background on this project: I originally made this for Citadel on September 10. Just wanna note that!
    ### USE OF AI
    - I did use Replit when creating the face highlight because no matter what I did, it didn't work. However, the jank solution that ended up in the project was completely made from scratch by me :D (and yes, I'm proud of it)
    - Aside from that, I did enter a Stack Overflow forum recommended by Google AI (or Gemini) that appeared every time you search for something on Google
