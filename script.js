@@ -741,6 +741,7 @@ document.addEventListener("click", async (event) => {
     const scrambleLable = toBoldSans("Scramble: ");
     const seedText = toMonospace(`Seed: ${finalSeed}`);
     const scramble = toMonospace(scrambleVec.toString().replaceAll(",", " "));
+    const expText = toBoldSans("EXP: ") + totalEXP;
     const cardText = toBoldSans("Cards: ");
     const topThree = totalCards
       .slice(-3)
@@ -751,7 +752,7 @@ document.addEventListener("click", async (event) => {
       remaining > 0 ? `${topThree} and ${remaining} more` : topThree;
     cardsText.join("\n");
 
-    const shareText = `${title}\n\n${scrambleLable}\n${seedText}\n${scramble}\n\n${cardText}\n${cardsText}`;
+    const shareText = `${title}\n\n${scrambleLable}\n${expText}\n${seedText}\n${scramble}\n\n${cardText}\n${cardsText}`;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(shareText);
