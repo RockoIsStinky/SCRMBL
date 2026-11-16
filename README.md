@@ -40,6 +40,8 @@ Hi phantom reviewers! A little background on this project: I originally made thi
    - Aside from that, I did enter a Stack Overflow forum recommended by Google AI (or Gemini) that appeared every time you search for something on Google
 
 ## WHAT IS PLANNED
+- [ ] PLL & OLL Recog
+- [ ] Better Patterns
 - [ ] Juicy SFX 🧃 
 - [ ] Login & User System
 - [ ] Leaderboards & Seed Searcher
