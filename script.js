@@ -31,6 +31,7 @@ import { shakeHelp } from "./shake.js";
 const faces = ["R", "L", "U", "D", "F", "B"];
 const modifiers = ["", "'", "2"];
 
+// this is the pieces array to sotre lal the pieces in the cube
 const pieces = [];
 const cube = new THREE.Group();
 const { moveToRot, updateGroupPos } = layerRotHelp({ cube, pieces });
@@ -332,6 +333,7 @@ scene.fog = new THREE.FogExp2(0x0c0a09, 0.15);
 
 RectAreaLightUniformsLib.init();
 
+// all the fancy lighting, the reason why i use rect light is because the reflection is super neat and nice
 const warmAmbient = new THREE.AmbientLight(0x2d1810, 10);
 scene.add(warmAmbient);
 
@@ -406,7 +408,7 @@ function animate() {
 
   if (faceSelected) {
     faceShot = true;
-    camera.zoom = larp(camera.zoom, 1.4, 0.08);
+    camera.zoom = larp(camera.zoom, 1.4, 0.08); // the zoom into the face
     camera.updateProjectionMatrix();
     facePopup.textContent = "drag the corners or edges to spin the face";
   } else {
@@ -577,6 +579,7 @@ async function playScramble() {
 
 async function handleCards() {
   expCount.classList.remove("hidden");
+  totalCards.clear();
   totalCardsMap.clear();
   totalEXP = 0;
   cardContainer.innerHTML = "";
