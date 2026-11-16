@@ -1,14 +1,23 @@
+// hey guys, so if you decide to look at my source code and see all the yap
+// it's one of two reasons:
+// number 1: i livestream with my friends while we talk so ometimes i cnat turn on my mic since its late
+// so i use comments :D
+// number 2: PHANTOPM and CITADEL YAYY
 import * as THREE from "three";
 import { RectAreaLightUniformsLib } from "three/examples/jsm/lights/RectAreaLightUniformsLib.js";
 import { OBJLoader } from "three/examples/jsm/Addons.js";
+
+// lovely post processing yum yum :D
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import { GTAOPass } from "three/examples/jsm/postprocessing/GTAOPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 
+// for the shaking of the cube
 import { SimplexNoise } from "three/addons/math/SimplexNoise.js";
 
+// theese are all the helper fucntions
 import { patterns } from "./patterns.js";
 import { cubeHelp } from "./cube.js";
 import { highlightHelp } from "./highlight.js";
@@ -26,7 +35,7 @@ const pieces = [];
 const cube = new THREE.Group();
 const { moveToRot, updateGroupPos } = layerRotHelp({ cube, pieces });
 
-const scrambleVec = [];
+const scrambleVec = []; // the scramble and the seed
 let finalSeed = "";
 
 const spacing = 0.33; // spacing between the cube pieces
@@ -52,8 +61,9 @@ let finished = false;
 let activeRotGroup = null;
 let activeAxis = "x";
 const rotationTimer = new THREE.Timer();
-const rotSpeedClamp = 700;
+const rotSpeedClamp = 700; // the max rotation speed we can go (also the rotation is inverted rn, ima fix that)
 
+// this is the face to color map
 const faceAxis = {
   R: "x",
   L: "x",
@@ -170,6 +180,7 @@ window.addEventListener("pointermove", (event) => {
 });
 
 // for sorting, the rarest will be at the bottom of the card container
+// hopefully there will be more patterns later on with more tiers!
 const rarityIndex = {
   common: 1,
   uncommon: 2,
@@ -188,6 +199,7 @@ const faceColors = {
   L: "O",
 };
 
+// MUAHAHAHAH
 const cubeTools = cubeHelp({
   pieces,
   cube,
@@ -672,13 +684,12 @@ async function handleCards() {
 }
 
 function addShare() {
+  // this just adds the sharing button :D
   if (buttonContainer && !buttonShareSpawn) {
     buttonContainer.insertAdjacentHTML("beforeend", shareHTML);
     buttonShareSpawn = true;
   } else {
-    console.warn(
-      "Could not find an element with class '.btnContainer' on the page.",
-    );
+    console.warn("cannot find btncontainer");
   }
 }
 
@@ -689,6 +700,7 @@ document.addEventListener("click", async (event) => {
   try {
     event.stopPropagation();
 
+    // another google pull
     const toMonospace = (text) => {
       return text
         .split("")
