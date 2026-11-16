@@ -579,9 +579,10 @@ async function playScramble() {
 
 async function handleCards() {
   expCount.classList.remove("hidden");
-  totalCards.clear();
+  totalCards.length = 0;
   totalCardsMap.clear();
   totalEXP = 0;
+  currEXP = 0;
   cardContainer.innerHTML = "";
 
   const cardElementsMap = new Map();
