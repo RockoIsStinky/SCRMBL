@@ -131,5 +131,5 @@ export function layerRotHelp({ cube, pieces }) {
     }
   }
 
-  return { moveToRot, updateGroupPos };
+  return { moveToRot, updateGroupPos, getLayer };
 }

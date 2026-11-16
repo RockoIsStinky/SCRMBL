@@ -25,6 +25,7 @@ import { layerRotHelp } from "./layerRot.js";
 import { patternRecog } from "./patternRecog.js";
 import { genScramb } from "./scrambleGen.js";
 import { shakeHelp } from "./shake.js";
+import { titleRepel } from "./repel.js";
 
 // this is for the random scramble generation
 // so yeah i can add middle layers like r u b <- lowercase (maybe i'll add it later)
@@ -34,7 +35,7 @@ const modifiers = ["", "'", "2"];
 // this is the pieces array to sotre lal the pieces in the cube
 const pieces = [];
 const cube = new THREE.Group();
-const { moveToRot, updateGroupPos } = layerRotHelp({ cube, pieces });
+const { moveToRot, updateGroupPos, getLayer } = layerRotHelp({ cube, pieces });
 
 const scrambleVec = []; // the scramble and the seed
 let finalSeed = "";
@@ -556,7 +557,7 @@ const cubeRender = document.querySelector("canvas");
 
 const shareHTML = `
   <button type="button" class="share">
-    <img class="shareicon" src="Assets/Share.svg" alt="share" />
+    <img class="shareicon" src="assets/share.svg" alt="share" />
   </button>
 `;
 
@@ -964,30 +965,6 @@ window.addEventListener("pointercancel", () => {
   cubeRender.style.cursor = "grab";
 });
 
-// helper function, very neat and simple
-function getLayer(move) {
-  const face = move[0];
-
-  // the face will be one of theese 6 characters: R, L, U, D, F, B
-  switch (face) {
-    // each cube pieces will have their own userdata so finding the position and mapping it to the face is simple
-    case "R":
-      return pieces.filter((piece) => piece.userData.x === 1);
-    case "L":
-      return pieces.filter((piece) => piece.userData.x === -1);
-    case "U":
-      return pieces.filter((piece) => piece.userData.y === 1);
-    case "D":
-      return pieces.filter((piece) => piece.userData.y === -1);
-    case "F":
-      return pieces.filter((piece) => piece.userData.z === 1);
-    case "B":
-      return pieces.filter((piece) => piece.userData.z === -1);
-    default:
-      return [];
-  }
-}
-
 function createRotGroup(move) {
   // js makes a group and put all the cube pieces of a certain face to this group for rotation
   // taken from the layerRot function, the final spin will be it's own helper function soon at spinnyBoi.js
@@ -1003,3 +980,5 @@ function createFaceRot(faceKey) {
   activeRotGroup = createRotGroup(faceKey);
   targetLayerAngle = 0;
 }
+
+titleRepel();

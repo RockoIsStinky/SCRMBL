@@ -416,7 +416,7 @@ export const patterns = [
   },
 
   {
-    name: "Dih",
+    name: "Wierdly Shaped Spaceship",
     tier: "epic",
     type: "shape",
     exp: 12500,
@@ -424,19 +424,6 @@ export const patterns = [
       ["X", "+", "X"],
       ["X", "+", "X"],
       ["+", "X", "+"],
-    ],
-    rotatable: "true",
-  },
-
-  {
-    name: "Arrow",
-    tier: "anomaly",
-    type: "shape",
-    exp: 5000,
-    grid: [
-      ["X", "+", "X"],
-      ["+", "+", "+"],
-      ["X", "+", "X"],
     ],
     rotatable: "true",
   },
@@ -462,6 +449,42 @@ export const patterns = [
       ["+", "X", "+"],
       ["+", "+", "+"],
       ["+", "X", "+"],
+    ],
+    rotatable: "true",
+  },
+  {
+    name: "W's IN THE SHATT",
+    tier: "anomaly",
+    type: "shape",
+    exp: 4500,
+    grid: [
+      ["+", "+", "X"],
+      ["X", "+", "+"],
+      ["X", "X", "+"],
+    ],
+    rotatable: "true",
+  },
+  {
+    name: "Letter P",
+    tier: "anomaly",
+    type: "shape",
+    exp: 3500,
+    grid: [
+      ["X", "+", "+"],
+      ["X", "+", "+"],
+      ["X", "X", "+"],
+    ],
+    rotatable: "true",
+  },
+  {
+    name: "Letter P",
+    tier: "anomaly",
+    type: "shape",
+    exp: 3500,
+    grid: [
+      ["+", "+", "X"],
+      ["+", "+", "X"],
+      ["+", "X", "X"],
     ],
     rotatable: "true",
   },
@@ -567,6 +590,18 @@ export const patterns = [
     ],
     rotatable: "true",
   },
+  {
+    name: "Spaceship",
+    tier: "anomaly",
+    type: "shape",
+    exp: 4000,
+    grid: [
+      ["+", "X", "+"],
+      ["+", "X", "+"],
+      ["X", "+", "X"],
+    ],
+    rotatable: "true",
+  },
 
   {
     name: "Trident",
@@ -595,6 +630,19 @@ export const patterns = [
   },
 
   {
+    name: "Mushroom",
+    tier: "anomaly",
+    type: "shape",
+    exp: 3150,
+    grid: [
+      ["+", "+", "+"],
+      ["+", "+", "+"],
+      ["X", "+", "X"],
+    ],
+    rotatable: "false",
+  },
+
+  {
     name: "Hollow Corner",
     tier: "common",
     type: "shape",
@@ -602,6 +650,19 @@ export const patterns = [
     grid: [
       ["X", "+", "X"],
       ["X", "+", "+"],
+      ["X", "X", "X"],
+    ],
+    rotatable: "true",
+  },
+
+  {
+    name: "Pointy Corner",
+    tier: "common",
+    type: "shape",
+    exp: 600,
+    grid: [
+      ["X", "+", "+"],
+      ["X", "X", "+"],
       ["X", "X", "X"],
     ],
     rotatable: "true",
@@ -616,6 +677,18 @@ export const patterns = [
       ["X", "+", "X"],
       ["+", "+", "+"],
       ["X", "X", "X"],
+    ],
+    rotatable: "true",
+  },
+  {
+    name: "Cross",
+    tier: "uncommon",
+    type: "shape",
+    exp: 400,
+    grid: [
+      ["X", "+", "X"],
+      ["+", "+", "+"],
+      ["X", "+", "X"],
     ],
     rotatable: "true",
   },
@@ -783,16 +856,15 @@ export const patterns = [
     ],
     rotatable: "true",
   },
-
   {
-    name: "corner",
+    name: "B-2 Spirit",
     tier: "anomaly",
     type: "3d",
-    exp: 6500,
+    exp: 9500,
     grid: [
+      ["+", "+", "+"],
       ["X", "+", "+"],
       ["X", "X", "+"],
-      ["X", "X", "X"],
     ],
     rotatable: "true",
   },

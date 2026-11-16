@@ -465,3 +465,8 @@ button:active {
   height: auto;
   filter: invert(1);
 }
+
+.title span {
+  display: inline-block;
+  will-change: transform;
+}
