@@ -75,6 +75,17 @@ const faceAxis = {
   B: "z",
 };
 
+// for the final face spin
+const layerMultiplier = {
+  F: -1,
+  B: 1,
+  R: -1,
+  L: 1,
+  U: -1,
+  D: 1,
+};
+let currSelectedFace;
+
 const windowPx = 265; // the pixel count for the cube display
 
 let currentHighlightedFace = null;
@@ -624,6 +635,7 @@ async function handleCards() {
   }
 
   for (const cardItem of totalCards) {
+    // YESS I FIXED IT :D
     const cardKey = `${cardItem.name}`;
 
     const count = (totalCardsMap.get(cardKey) || 0) + 1;
@@ -738,6 +750,7 @@ document.addEventListener("click", async (event) => {
         .join("");
     };
 
+    // fixed sharing
     const title = `🧩 ${toBoldSans("My Daily SCRMBL")}`;
     const scrambleLable = toBoldSans("Scramble: ");
     const seedText = toMonospace(`Seed: ${finalSeed}`);
@@ -753,7 +766,7 @@ document.addEventListener("click", async (event) => {
     const cardsText =
       remaining > 0 ? `${topThree} and ${remaining} more` : topThree;
 
-    const shareText = `${title}\n\n${scrambleLable}\n${expText}\n${seedText}\n${scramble}\n${cardText}\n${cardsText}`;
+    const shareText = `${title}\n\n\n${expText}\n\n${scrambleLable}\n${seedText}\n${scramble}\n${cardText}\n${cardsText}`;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(shareText);
@@ -927,9 +940,11 @@ cubeRender.addEventListener("pointermove", (e) => {
     let delta = currAngle - prevAngle; // this will be our drag value
     delta = Math.atan2(Math.sin(delta), Math.cos(delta));
 
-    targetLayerAngle -= delta;
+    const targetDelta = delta * layerMultiplier[currSelectedFace];
 
-    const sampleVelocity = -delta / moveDt;
+    targetLayerAngle += targetDelta;
+
+    const sampleVelocity = targetDelta / moveDt;
     spinVel = THREE.MathUtils.clamp(
       spinVel * 0.8 + sampleVelocity * 0.2,
       -rotSpeedClamp,
@@ -976,9 +991,11 @@ function createRotGroup(move) {
 
 function createFaceRot(faceKey) {
   //this makes the rotation layer :P
+  currSelectedFace = faceKey;
   activeAxis = faceAxis[faceKey] ?? "x";
   activeRotGroup = createRotGroup(faceKey);
   targetLayerAngle = 0;
+  spinVel = 0;
 }
 
 titleRepel();

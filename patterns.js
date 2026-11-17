@@ -857,6 +857,7 @@ export const patterns = [
     rotatable: "true",
   },
   {
+    // my favorite patter :D
     name: "B-2 Spirit",
     tier: "anomaly",
     type: "3d",

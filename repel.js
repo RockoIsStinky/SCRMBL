@@ -59,6 +59,7 @@ export function titleRepel() {
   }
 
   window.addEventListener("pointermove", (e) => {
+    // animating the repelling of the text
     // detect moevment so we can move the text accordingly
     const mouseX = e.clientX;
     const mouseY = e.clientY;
@@ -75,7 +76,7 @@ export function titleRepel() {
 
       const currentRadius = letter.baseRad;
       const currentMaxMove = letter.baseMaxMove;
-
+      // ah yes
       if (dist < currentRadius) {
         const force = (currentRadius - dist) / currentRadius;
         letter.targetY = Math.sign(dy || 1) * force * currentMaxMove;
